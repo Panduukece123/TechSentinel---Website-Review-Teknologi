@@ -18,17 +18,17 @@ const Homepage = () => {
 
   // Hook Intersection Observer
   const { ref: chooseUsRef, inView: chooseUsInView } = useInView({
-    triggerOnce: true,  // Animasi hanya sekali
-    threshold: 0.1,     // Trigger saat 10% elemen terlihat
+    triggerOnce: true, 
+    threshold: 0.1,   
   });
 
   return (
     <div className="flex flex-col items-center justify-between min-h-screen px-4 text-center">
       {/* Headline */}
       <motion.h1
-        initial={{ opacity: 0, y: 50 }} // Awal: transparan dan turun 50px
-        animate={{ opacity: 1, y: 0 }}   // Animasi ke: muncul dan posisi normal
-        transition={{ duration: 0.5, ease: 'easeOut' }} // Durasi dan jenis easing
+        initial={{ opacity: 0, y: 50 }} 
+        animate={{ opacity: 1, y: 0 }}   
+        transition={{ duration: 0.5, ease: 'easeOut' }} 
         className="font-poppins text-white text-2xl mt-32 sm:text-4xl md:text-5xl font-semibold mb-4"
         style={{ lineHeight: '1.1' }}
       >
@@ -114,12 +114,13 @@ const Homepage = () => {
         </div>
       </div>
 
+
       {/* Section Why Choose Us */}
-      <div className="w-full max-w-5xl mt-10 text-center sm:px-4 px-6" ref={chooseUsRef}>
+      <div className="w-full max-w-5xl mt-10 text-justify sm:px-4 px-6 " ref={chooseUsRef}>
         <motion.h2
           initial={{ opacity: 0, y: 50 }} // Awal: transparan dan turun 50px
           animate={{ opacity: chooseUsInView ? 1 : 0, y: chooseUsInView ? 0 : 50 }}   // Animasi ke: muncul dan posisi normal
-          transition={{ duration: 0.5, ease: 'easeOut' }} // Durasi dan jenis easing
+          transition={{ duration: 0.8, ease: 'easeOut' }} // Durasi dan jenis easing
           className="font-poppins text-white text-2xl sm:text-4xl md:text-5xl mt-8 font-semibold mb-4"
         >
           Why Choose Us?
@@ -127,13 +128,27 @@ const Homepage = () => {
         <motion.p
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: chooseUsInView ? 1 : 0, y: chooseUsInView ? 0 : 50 }}
-          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.5 }}
           className="text-white text-sm sm:text-lg md:text-lg mb-8 max-w-5xl font-light"
         >
           We provide expert, data-driven reviews to help you make the best technology choices.
-          Our comprehensive analysis ensures you get the most accurate, up-to-date information on products to help you decide with confidence.
+          Our comprehensive analysis ensures you get the most accurate, up-to-date information on products to help you decide with confidence. <br /><br />
+          Why choose us? We don’t just give random recommendations, but rather ones based on deep data and knowledge of the latest technology. We are committed to providing honest and transparent information, with the goal of helping you make well-informed and wise decisions. 
         </motion.p>
       </div>
+
+
+      {/* Section Popular Laptops */}
+      <div className="w-full max-w-5xl mt-6 text-left sm:px-4 px-6">
+        <h2 className="font-poppins text-white text-lg sm:text-4xl md:text-5xl mt-8 font-semibold mb-2">
+          Some of the Popular Laptops Recently :
+        </h2>
+        <p className="text-white lg:text-xl sm:text-lg md:text-lg mb-2 max-w-5xl font-light">
+          Check out some of the most popular laptops recently, loved by technology enthusiasts and professionals alike.
+        </p>
+      </div>
+
+
 
       {/* Card Section */}
       <div className="w-full max-w-5xl mt-10 bg-white bg-opacity-5 border border-white border-opacity-30 rounded-2xl overflow-x-auto">
